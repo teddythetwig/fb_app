@@ -1,0 +1,7 @@
+class AddTokenToUser < ActiveRecord::Migration
+  def change
+    change_table :users do |t|
+      t.column :token, :bigint
+    end
+  end
+end
