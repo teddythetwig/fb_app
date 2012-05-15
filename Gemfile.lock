@@ -47,6 +47,7 @@ GEM
       httpclient (>= 2.2.0.2)
       rack-oauth2 (>= 0.14.4)
       tzinfo
+    haml (3.1.5)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.1)
@@ -135,6 +136,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fb_graph
+  haml
   jquery-rails
   omniauth-facebook
   rails (= 3.2.2)
