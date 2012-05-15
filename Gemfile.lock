@@ -48,6 +48,11 @@ GEM
       rack-oauth2 (>= 0.14.4)
       tzinfo
     haml (3.1.5)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hashie (1.2.0)
     hike (1.2.1)
     httpauth (0.1)
@@ -137,6 +142,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   fb_graph
   haml
+  haml-rails
   jquery-rails
   omniauth-facebook
   rails (= 3.2.2)
