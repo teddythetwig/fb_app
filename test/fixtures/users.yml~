@@ -1,16 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 user:
+  id: 1
   provider: facebook
   uid: 1
   name: Teddy
 
 friend:
+  id: 2
   provider: facebook
   uid: 2
   name: Satish
   
 other:
+  id: 3
   provider: facebook
   uid: 3
-  name: Kristin
+  name: Bob

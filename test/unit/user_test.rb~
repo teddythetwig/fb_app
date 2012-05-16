@@ -43,11 +43,13 @@ class UserTest < ActiveSupport::TestCase
     assert user.save, "Did not save"
   end
   test "user.friends method should return 1" do
-    assert users(:user).friends.length == 1, "there was no friendship"
+    f_len = users(:user).friends.length
+    assert  f_len == 1, "but was #{f_len}"
   end
   
   test "friend.friends method should return 1" do
-    assert users(:friend).friends.length == 1, "there was no friendship"
+    f_len = users(:friend).friends.length
+    assert  f_len == 1, "but was #{f_len}"
   end
   
   test "find_and_create_friendships should not add friend with empty array" do
@@ -61,7 +63,8 @@ class UserTest < ActiveSupport::TestCase
     friends = [users(:other)]
     before = Friendship.all.length
     users(:user).find_and_create_friendships(friends)
-    assert_not_equal Friendship.all.length, before, "A friendship was created"
+    after = Friendship.all.length
+    assert_not_equal before, after, "#{friends}"
   end
   
 end

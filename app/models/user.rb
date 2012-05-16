@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   has_many :friendships, :dependent => :destroy
-  has_many :friends, :through => :friendships
+  validates_presence_of :token,:uid, :name, :provider
   
-  attr_accessible :token, :uid, :token, :name
+  attr_accessible :token, :uid, :name, :provider
   
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -18,12 +18,18 @@ class User < ActiveRecord::Base
   
   def find_and_create_friendships(friends)
     friends.each do |f|
-      if friend = User.find_by_uid(f.id)
-        create! do |friendship|
+      ##the value for this should be f.id, but I can not get it to work with the fixture
+      if friend = User.find_by_uid(f.uid)
+        Friendship.new do |friendship|
           friendship.user = self
           friendship.friend = friend
+          friendship.save
         end
       end
     end    
+  end
+  
+  def friends
+    Friendship.find_by_user_or_friend(self)
   end
 end
