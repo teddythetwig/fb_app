@@ -1,5 +1,5 @@
 .friends
-  = "#{@user.name} has #{@user.friends.size} friend(s):"
+  = "#{@user.name} has #{@user.friends.size} friends:"
   -@user.friends.each do |f|
     .friend
       = link_to f.name, f

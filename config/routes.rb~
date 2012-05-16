@@ -1,6 +1,6 @@
 FbApp::Application.routes.draw do
   resources :users
-  root :to => "users#show"
+  root :to => "users#index"
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy", :as => :signout
   # The priority is based upon order of creation:
