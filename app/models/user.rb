@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   
   def find_and_create_friendships(friends)
     friends.each do |f|
-      if friend = User.find_by_uid(f.identifier)
+      if friend = User.find_by_uid(f.id)
         create! do |friendship|
           friendship.user = self
           friendship.friend = friend
@@ -26,6 +26,4 @@ class User < ActiveRecord::Base
       end
     end    
   end
-  
-  
 end

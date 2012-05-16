@@ -61,7 +61,7 @@ class UserTest < ActiveSupport::TestCase
     friends = [users(:other)]
     before = Friendship.all.length
     users(:user).find_and_create_friendships(friends)
-    assert_not_equal Friendship.all.length, before, "A friendship was not created"
+    assert_not_equal Friendship.all.length, before, "A friendship was created"
   end
   
 end

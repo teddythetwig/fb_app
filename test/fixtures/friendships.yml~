@@ -1,6 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user: user
-  friend: friend
+  user_id: 0
+  friend_id: 1
 
