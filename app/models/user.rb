@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   def find_and_create_friendships(friends)
     friends.each do |f|
       ##the value for this should be f.id, but I can not get it to work with the fixture
-      if friend = User.find_by_uid(f.uid)
+      if friend = User.find_by_uid(f.id)
         Friendship.new do |friendship|
           friendship.user = self
           friendship.friend = friend
