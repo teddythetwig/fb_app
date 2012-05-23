@@ -42,4 +42,6 @@ class FriendshipTest < ActiveSupport::TestCase
     friends = Friendship.find_by_user_or_friend(users(:other))
     assert friends.length == 0, "Length was #{friends.length}"
   end
+  
+  
 end
